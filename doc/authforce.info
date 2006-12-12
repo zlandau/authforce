@@ -1,0 +1,222 @@
+This is authforce.info, produced by makeinfo version 4.0 from
+authforce.texi.
+
+   This file documents authforce, an HTTP authentication brute forcer.
+
+   Copyright 1990 Free Software Foundation, Inc.
+
+
+File: authforce.info,  Node: Top,  Next: Overview,  Up: (dir)
+
+             authforce - HTTP authentication brute forcer
+
+* Menu:
+
+* Overview::		Features of authforce.
+* Usage::		Using authforce
+* Invoking::		authforce command-line arguments.
+* Examples::		Examples of usage.
+* Contact::		Contacting the author
+* Concept Index::	Topics covered by this manual.
+
+
+File: authforce.info,  Node: Overview,  Next: Usage,  Prev: Top,  Up: Top
+
+Overview
+********
+
+   Authforce is an HTTP Authentication brute forcer.  Using various
+methods, it attempts brute force username and password pairs for a
+site. It has the ability to try common username and passwords, username
+derivations, and common username/password pairs. It is used to both
+test the security of your site and to prove the insecurity of HTTP
+Authentication based on the fact that users just don't pick good
+passwords.
+
+   Furthermore, authforce is free software. This means that everyone may
+use it, redistribute it and/or modify it under the terms of the GNU
+General Public License, as published by the Free Software Foundation.
+
+
+File: authforce.info,  Node: Usage,  Next: Invoking,  Prev: Overview,  Up: Top
+
+Usage
+*****
+
+   For basic usage, make sure the data files have the data you want,
+and then run authforce with the argument being the url of the site you
+want to brute force. At the moment, it is not possible to disable a
+method, but you can get the same effect by making it use an empty data
+file. For example, I don't usually use the concat method, because the
+datalist I have for it sucks.
+
+   The major special item that may cause a little confusion is the
+session support. I think it works :P. Start up authforce with the -s
+option (for session support) and let it run. When you want to stop it,
+kill it with USRINT (^C or kill -INT pid) which will cause the program
+to write its current position to session.save (by default) and quit.
+Then when you want to resume the session, type authforce -r.
+
+   The data lists are very sparse at the moment. Make your own or find
+one.  Programs like John the Ripper have good lists, although you
+usually don't want yours that long. If you make a good list of your
+own, please contribute it.
+
+   The password.lst file has a new syntax now. Along with regular
+passwords are the keywords {username} and {emanresu} which insert the
+username and the username reversed, respectively. Things like
+{username123} and {usernameemanresu} are valid (and encouraged!). If
+you have any ideas for other keywords, please let me know.
+
+   If you compile with the development CFLAGS, and you wish to leave in
+-DMEMWATCH, you'll need to get memwatch from:
+`http://www.link-data.com/memwatch-2.64.tar.gz'
+
+   Put memwatch.c and memwatch.h in the authforce directory and
+compile. It is really a great program and I recommend you use it for
+your own projects.
+
+   P.S. Memory leaks are spawned by the devil. Elimate them for me and I
+will be very happy. To find the ones I know about, grep for MEMWATCH.
+
+
+File: authforce.info,  Node: Invoking,  Next: Examples,  Prev: Usage,  Up: Top
+
+Invoking
+********
+
+   By default, authforce is simple to invoke. The basic syntax is:
+
+   `authforce [options] URL'
+
+   The program returns 0 if no matches were found, and 1 if atleast one
+match is found.
+
+   The directory /usr[/local]/share/authforce contains the data files
+containing usernames and passwords.
+
+`-b'
+     Beep when a match is found
+
+`-d'
+`--debug=NUMBER'
+     Set debugging level between 0 and 5
+
+`--dummy-file'
+     File containing dummy  matches.  [username:password form]
+
+`-h'
+`--help'
+     Display help and exit
+
+`-l FILE'
+`--logfile=FILE'
+     Set logfile to FILE
+
+`-r'
+`--resume[=FILE]'
+     Resume  old  session  (using  FILE)  [default  session.save]
+
+`-s'
+`--save[=FILE]'
+     Save session on SIGUSR1  (to  FILE)  [default  session.save]
+
+`-c'
+`--max-connects=NUMBER'
+     Don't make more than NUMBER connections
+
+`-u'
+`--max-users=NUMBER'
+     Don't try more than NUMBER users
+
+`-U'
+`--user-agent=STRING'
+     Set user agent to STRING
+
+`--pairs-file=FILE'
+     File containing username:password pairs
+
+`--password-delay=NUMBER'
+     Delay for NUMBER seconds between attempts
+
+`--password-file=FILE'
+     File containing common passwords
+
+`-p'
+`--path=STRING'
+     Look for pathlist STRING
+
+`-P'
+`--proxy=STRING'
+     Set proxy to STRING
+
+`-q'
+`--quiet'
+     Don't output to stdout
+
+`--user-delay=NUMBER'
+     Delay for NUMBER seconds between usernames
+
+`--username-file=FILE'
+     File containing list of usernames
+
+`-v'
+`--verbose'
+     be verbose (default), opposite of -quiet
+
+`-V'
+`--version'
+     Print version information and exits
+
+
+File: authforce.info,  Node: Examples,  Next: Contact,  Prev: Invoking,  Up: Top
+
+Examples
+********
+
+   In this chapter we'll give you some examples to help you getting
+started.
+
+     authforce http://www.mywebsite.com/members/index.html
+   Search for a login/password combination on the given URL.
+
+
+File: authforce.info,  Node: Contact,  Next: Concept Index,  Prev: Examples,  Up: Top
+
+Contact
+*******
+
+   Please contact me. Even if it is just to say that you are using the
+program. Feedback helps me understand how well I'm doing :P Feel free to
+send it gpg encrypted too. You know, so 'they' can't intercept it.
+
+   You can always download the latest version of authforce at
+`http://kapheine.hypa.net/authforce'
+
+   Email the author at <kapheine@hypa.net>
+
+   Get his GPG Key at `http://kapheine.hypa.net/kapheine.asc' so you
+can use secure mail.
+
+
+File: authforce.info,  Node: Concept Index,  Prev: Contact,  Up: Top
+
+Concept Index
+*************
+
+* Menu:
+
+* Sample index entry:                    Overview.
+
+
+
+Tag Table:
+Node: Top201
+Node: Overview564
+Node: Usage1291
+Node: Invoking3199
+Node: Examples4849
+Node: Contact5151
+Node: Concept Index5704
+
+End Tag Table

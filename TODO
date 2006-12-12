@@ -1,0 +1,31 @@
+Features:
+	** find a damn difference between a page not existing and not being 
+		accessible
+	* add memwatch support to ./configure script
+	* variations on passwords  (uppercase, adding numbers etc) (suggested by Panagiotis Issaris)
+	* random entry support (so server logs wont show AS much of a pattern)
+	* statistics (average tries per second, average hits per hour etc)
+		+ html output
+		+ text output
+	* multiple hosts (maybe)
+		- host at a time
+		- round robin
+	* reimplement tilde_expand so we dont need readline
+	* method to replace certain chars (ie: o->0 etc)
+	* support for the following: {username[5]} which would display the first
+		5 characters of username
+
+General:
+	* replace sleep() with something reasonable
+
+Debugging:
+	* get rid of memory leaks/problems reported by memwatch
+	* check for buffer overflows
+
+Further testing:
+	* session support
+	* error/success codes return by various web servers
+	* make sure this is the optimal way to brute force
+
+Documentation:
+	* further explain options if needed

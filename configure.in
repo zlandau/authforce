@@ -1,0 +1,109 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(src/main.c)
+
+MAJOR_VERSION=0
+MINOR_VERSION=9
+MICRO_VERSION=6
+VERSION=$MAJOR_VERSION.$MINOR_VERSION.$MICRO_VERSION
+AC_SUBST(MAJOR_VERSION)
+AC_SUBST(MINOR_VERSION)
+AC_SUBST(MICRO_VERSION)
+AC_SUBST(VERSION)
+
+AM_INIT_AUTOMAKE(authforce, $VERSION)
+
+AM_CONFIG_HEADER(config.h)
+
+AM_WITH_DMALLOC
+
+dnl Add the languages which your application supports here.
+ALL_LINGUAS="nl"
+
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_ARG_PROGRAM
+AC_PROG_INSTALL
+
+AM_GNU_GETTEXT
+
+curl=yes
+AC_ARG_WITH(curl,
+[  --with-curl             attempt compiling using CURL [default=yes]
+                          CURL is available at http://curl.haxx.se/],
+[
+  if test x$withval = xno; then
+    curl=no
+  fi
+]
+)
+
+if test x$curl = xyes; then
+    AC_CHECK_LIB(curl, curl_easy_init, curl=yes, [
+	echo ""
+	echo "WARNING: Configure tried to use the CURL library but couldn't"
+	echo "find it. Continuing with the dummy functions instead. You can"
+	echo "download the CURL library at: http://curl.haxx.se/"
+	echo ""
+	curl=no
+	])
+fi
+
+if test x$curl = xyes; then
+  AC_DEFINE(USE_CURL, 1, [Define if you have the CURL library])
+  LIBS="$LIBS -lcurl"
+else
+  AC_DEFINE(USE_DUMMY, 1, [Define if you don't have the CURL library])
+fi
+
+
+dnl Checks for libraries.
+AC_CHECK_LIB(ncurses, initscr)
+AC_CHECK_LIB(readline, readline)
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(malloc.h unistd.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_SIZE_T
+
+dnl Checks for library functions.
+AC_TYPE_SIGNAL
+AC_CHECK_FUNCS(strdup strstr)
+
+AUTHFORCE_PATH=".:/usr/local/share/authforce/data:../data"
+AUTHFORCE_CONFIG="/usr/local/etc/authforcerc:~/.authforcerc"
+dnl AC_DEFINE_UNQUOTED(DEFAULT_PATH, "${AUTHFORCE_PATH}")
+AC_DEFINE_UNQUOTED(DEFAULT_CONFIG,"${AUTHFORCE_CONFIG}")
+
+AC_ARG_WITH(path, [  --with-path=PATH        change default path])
+
+dnl AC_DEFINE_UNQUOTED(DEFAULT_PATH, "$with_path")
+
+if test "x$with_path" != "x"
+then
+  AC_DEFINE_UNQUOTED(DEFAULT_PATH, "$with_path")
+else
+  AC_DEFINE_UNQUOTED(DEFAULT_PATH, "${AUTHFORCE_PATH}")
+fi
+
+AC_OUTPUT(
+Makefile
+src/Makefile
+doc/Makefile
+intl/Makefile
+po/Makefile.in
+data/Makefile
+authforce.spec
+)
+
+dnl echo "
+dnl Configuration:
+
+dnl	Source code location:	${srcdir}
+dnl	Compiler:		${CC}
+dnl	Using CURL:		${curl}
+
+dnl "

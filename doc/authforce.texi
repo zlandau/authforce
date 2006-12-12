@@ -1,0 +1,193 @@
+\input texinfo @c -*-texinfo-*-
+@c %**start of header
+@setfilename authforce.info
+@settitle Authforce
+@c %**end of header
+
+@setchapternewpage odd
+
+@ifinfo
+This file documents authforce, an HTTP authentication brute forcer.
+
+Copyright 1990 Free Software Foundation, Inc.
+@end ifinfo
+
+@titlepage
+@sp 10
+@comment The title is printed in a large font.
+@center @titlefont{authforce - HTTP authentication brute forcer}
+
+@page
+@vskip 0pt plus 1filll
+Copyright @copyright{Zachary P. Landau} 2001.
+@end titlepage
+
+@node Top, Overview, ,(dir)
+@center @titlefont{authforce - HTTP authentication brute forcer}
+
+@menu
+* Overview::		Features of authforce.
+* Usage::		Using authforce
+* Invoking::		authforce command-line arguments.
+* Examples::		Examples of usage.
+* Contact::		Contacting the author
+* Concept Index::	Topics covered by this manual.
+@end menu
+
+@node Overview, Usage, Top, Top
+@chapter Overview
+@cindex Sample index entry
+Authforce is an HTTP Authentication brute forcer. 
+Using various methods,
+it attempts brute force username and password pairs for a site. It has
+the ability to try common username and passwords, username derivations,
+and common username/password pairs. It is used to both test the security
+of your site and to prove the insecurity of HTTP Authentication based on
+the fact that users just don't pick good passwords.
+
+Furthermore, authforce is free software. This means that everyone may
+use it, redistribute it and/or modify it under the terms of the
+GNU General Public License, as published by the Free Software
+Foundation.
+
+
+@node Usage, Invoking, Overview, Top
+@chapter Usage
+For basic usage, make sure the data files have the data you want, and then
+run authforce with the argument being the url of the site you want to brute
+force. At the moment, it is not possible to disable a method, but you can
+get the same effect by making it use an empty data file. For example, I
+don't usually use the concat method, because the datalist I have for it
+sucks.
+
+The major special item that may cause a little confusion is the session 
+support. I think it works :P. Start up authforce with the -s option (for
+session support) and let it run. When you want to stop it, kill it with
+USRINT (^C or kill -INT pid) which will cause the program to write its 
+current position to session.save (by default) and quit. Then when you want
+to resume the session, type authforce -r.
+
+The data lists are very sparse at the moment. Make your own or find one.
+Programs like John the Ripper have good lists, although you usually don't
+want yours that long. If you make a good list of your own, please 
+contribute it.
+
+The password.lst file has a new syntax now. Along with regular passwords
+are the keywords @{username@} and @{emanresu@} which insert the username and
+the username reversed, respectively. Things like @{username123@} and
+@{usernameemanresu@} are valid (and encouraged!). If you have any ideas
+for other keywords, please let me know.
+
+If you compile with the development CFLAGS, and you wish to leave in 
+-DMEMWATCH, you'll need to get memwatch from:
+@uref{http://www.link-data.com/memwatch-2.64.tar.gz}
+
+Put memwatch.c and memwatch.h in the authforce directory and compile. It
+is really a great program and I recommend you use it for your own projects.
+
+
+P.S. Memory leaks are spawned by the devil. Elimate them for me and I
+will be very happy. To find the ones I know about, grep for MEMWATCH.
+
+
+@node Invoking, Examples, Usage, Top
+@chapter Invoking
+By default, authforce is simple to invoke. The basic syntax is:
+
+@samp{authforce [options] URL}
+
+The program returns 0 if no matches were found, and 1 if
+atleast one match is found.
+
+The directory /usr[/local]/share/authforce contains
+the data files containing usernames and passwords.
+
+
+@table @option 
+@item -b
+Beep when a match is found
+@item -d
+@itemx --debug=NUMBER
+Set debugging level between 0 and 5
+@item --dummy-file
+File containing dummy  matches.  [username:password form]
+@item -h
+@itemx --help
+Display help and exit
+@item -l FILE
+@itemx --logfile=FILE
+Set logfile to FILE
+@item -r
+@itemx --resume[=FILE]
+Resume  old  session  (using  FILE)  [default  session.save]
+@item -s
+@itemx --save[=FILE]
+Save session on SIGUSR1  (to  FILE)  [default  session.save]
+@item -c
+@itemx --max-connects=NUMBER
+Don't make more than NUMBER connections
+@item -u
+@itemx --max-users=NUMBER
+Don't try more than NUMBER users
+@item -U
+@itemx --user-agent=STRING
+Set user agent to STRING
+@item --pairs-file=FILE
+File containing username:password pairs
+@item --password-delay=NUMBER
+Delay for NUMBER seconds between attempts
+@item --password-file=FILE
+File containing common passwords
+@item -p
+@itemx --path=STRING
+Look for pathlist STRING
+@item -P
+@itemx --proxy=STRING
+Set proxy to STRING
+@item -q
+@itemx --quiet
+Don't output to stdout
+@item --user-delay=NUMBER
+Delay for NUMBER seconds between usernames
+@item --username-file=FILE
+File containing list of usernames
+@item -v
+@itemx --verbose
+be verbose (default), opposite of --quiet
+@item -V
+@itemx --version
+Print version information and exits
+@end table
+
+@node Examples, Contact, Invoking, Top
+@chapter Examples 
+In this chapter we'll give you some examples to help you
+getting started.
+
+@example
+authforce http://www.mywebsite.com/members/index.html
+@end example
+Search for a login/password combination on the given URL.
+
+@node Contact, Concept Index, Examples, Top
+@chapter Contact 
+Please contact me. Even if it is just to say that you are using the 
+program. Feedback helps me understand how well I'm doing :P Feel free to
+send it gpg encrypted too. You know, so 'they' can't intercept it.
+
+You can always download the latest version of authforce at
+@uref{http://kapheine.hypa.net/authforce}
+
+Email the author at @email{kapheine@@hypa.net}
+
+Get his GPG Key at @uref{http://kapheine.hypa.net/kapheine.asc} so
+you can use secure mail.
+
+
+@node Concept Index, , Contact,Top
+@unnumbered Concept Index
+
+@printindex cp
+
+@contents
+@bye

@@ -1,0 +1,7 @@
+* \r printed items leave garbage at end of line sometimes
+* Invalid chars are not filtered, curl will prompt for password:
+* If a password has a space, only chars up to the space will be submitted
+* Assumes authentication is needed, reporting false successes (sorta)
+* Downloads the page, shouldnt do this
+* No way of setting debug before parse_config
+* Fix session support in methods.c

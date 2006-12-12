@@ -1,0 +1,56 @@
+# Example authforce.rc
+# edit and copy to /usr/local/etc/authforcerc or $HOME/.authforcerc
+#
+
+# Setting this on causes authforce to beep when a match is found
+beep = 1
+
+# Setting this between 0-5 specifies how much debugging info to show. 0 - none, 5 - the max
+debug = 0
+
+# This sets the location of the dummy match list
+# WARNING: only works if USE_DUMMY was set in Makefile
+# dummy_file = /usr/local/share/authforce/data/dummy.lst
+
+# This sets the name of the logfile
+# logfile = authforce.log
+
+# This sets either the location of or the use of the resume session file
+# resume = session.save
+# resume = 0
+
+# This sets either the location of or the use of the save session file
+# save = session.save
+# save = 0
+
+# This sets the maximum number of users to be attempted
+# set to 0 for unlimited
+# max_users = 0
+
+# This sets the user agent transmitted to the remote webserver
+# WARNING: at the moment, all spaces will be removed. see BUGS
+# user_agent = authforce
+
+# This sets the location of username:password pairs
+# pairs_file = /usr/local/share/authforce/data/userpass.lst
+
+# This sets the delay between attempts in seconds
+# password_delay = 0
+
+# This sets the location of the common password list
+# password_file = /usr/local/share/authforce/data/password.lst
+
+# This sets the path list for the data files
+# path = /usr/local/share/authforce/data:data:.
+
+# This sets the proxy to be used to connect to webservers
+# proxy = http://server:8080
+
+# Setting this on causes only error messages to be outputted
+# quiet = 0
+
+# This sets the delay between username attempts in seconds
+# user_delay = 0
+
+# This sets the location of the username file
+# username_file = /usr/local/share/authforce/data/username.lst

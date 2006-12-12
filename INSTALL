@@ -1,0 +1,27 @@
+Quick install:
+	./configure && make && make install
+
+Panagiotis Issaris <takis@lumumba.luc.ac.be> was kind enough to write a
+configure script, along with this:
+
+There's a configure script now. I'll explain it's behaviour.
+At default it tries to use CURL if that library is available. If
+you specify to use the CURL library explicitly or use the default,
+it will give you a warning that it can't find CURL and will be
+using dummy function instead. The warning message also includes
+an URL where the user can download the CURL library.
+You can explicitly disable CURL usage (and thus enable dummy functions)
+even if it is available by giving configure the --without-curl argument.
+
+-----
+
+The search path for the datafiles can be changed with --with-path. The default
+is /usr/local/share/authforce/data:../data:.
+
+Curl can be gotten at http://curl.haxx.se/
+
+Install readline if you don't have it
+
+The optional config file may be installed as /usr/local/etc/authforcerc as a
+global config and/or $HOME/.authforcerc. You may use authforcerc.sample as
+a template. It contains (mostly) the defaults.

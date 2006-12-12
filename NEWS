@@ -1,0 +1,24 @@
+Changes in 0.9.6
+	- Fixed major bug where authforce would segfault on larger files
+
+Changes in 0.9.5
+	- Internationalisation support (en, nl)
+	- autoconf/automake support
+	- Fixes for compiling in various distributions
+	
+Changes in 0.9.3
+	- Fair amount of bug squashing and memory leak killing
+	- Fixed and Improved session support
+	- SIGINT (Control-c) instead of SIGUSR1 for session support
+
+Changes in 0.9.2.pi
+	- New password file syntax
+	- Various bugfixes (as always)
+	- Most memory leaks annihilated
+
+Changes in 0.9.0
+	- Config file support
+	- Various bugfixes
+
+Changes in 0.8.0
+	- Initial Release

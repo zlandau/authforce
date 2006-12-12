@@ -1,0 +1,8 @@
+; dummy list
+; 
+; list of username/passwords that will be reported as match for dummy
+; driver
+
+Aladdin:OpenSesame
+Bob:Hope
+bob:god

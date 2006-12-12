@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2001-04-30 17:29-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: src/main.c:88
+#, c-format
+msgid ""
+"usage: %s [OPTION]... URL\n"
+"\n"
+msgstr ""
+
+#: src/main.c:89
+msgid "options:\n"
+msgstr ""
+
+#: src/main.c:90
+msgid ""
+"\t-b,\t--beep\t\t\tbeep when a match is found\n"
+"\t-d,\t--debug=NUMBER\t\t\tlevel of debugging\n"
+"\t\t--dummy-file=FILE\tfile containing dummy matches\n"
+"\t\t\t\t\t[username:password form]\n"
+"\t-h,\t--help\t\t\tdisplay this help and exit\n"
+"\t-l,\t--logfile=FILE\t\tset logfile to FILE\n"
+"\t-r,\t--resume[=FILE]\t\tresume old session using FILE\n"
+"\t\t\t\t\t[default session.save]\n"
+"\t-s,\t--save[=FILE]\t\tsave session on SIGUSR1 to FILE\n"
+"\t\t\t\t\t[default session.save]\n"
+"\t-c,\t--max-connects=NUMBER\tdon't make more than NUMBER connections\n"
+"\t-u,\t--max-users=NUMBER\tdon't try more than NUMBER users\n"
+"\t-U,\t--user-agent=STRING\tset user agent to STRING\n"
+"\t\t--pairs-file=FILE\tfile containing username:password pairs\n"
+"\t\t--password-delay=NUMBER\tdelay for # seconds between attempts\n"
+"\t\t--password-file=FILE\tfile containing common passwords\n"
+"\t-p,\t--path=STRING\t\tlook for pathlist STRING\n"
+"\t-P,\t--proxy=STRING\t\tset proxy to STRING\n"
+"\t-q,\t--quiet\t\t\tdon't output to stdout\n"
+"\t\t--user-delay=NUMBER\tdelay for # seconds between usernames\n"
+"\t\t--username-file=FILE\tfile containing list of usernames\n"
+"\t\t--verbose\t\tbe verbose (default), opposite of --quiet\n"
+"\t-V,\t--version\t\tprint version information and exit\n"
+msgstr ""
+
+#: src/main.c:114
+#, c-format
+msgid ""
+"\n"
+"Report bugs to <%s>.\n"
+msgstr ""
+
+#: src/main.c:126
+#, c-format
+msgid "%s: Missing arguments\n"
+msgstr ""
+
+#: src/main.c:127 src/main.c:230
+#, c-format
+msgid "Try %s --help for more information.\n"
+msgstr ""
+
+#: src/main.c:204
+#, c-format
+msgid ""
+"%s %s\n"
+"\n"
+"Copyright (C) 2000 %s\n"
+"There is NO warranty.  You may redistribute this software\n"
+"under the terms of the GNU General Public License.\n"
+"For more information about these matters, see the files named COPYING\n"
+"\n"
+"Written by %s <%s>.\n"
+msgstr ""
+
+#: src/main.c:221
+#, c-format
+msgid "%s: missing URL\n"
+msgstr ""
+
+#: src/main.c:222 src/main.c:229
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... [URL]\n"
+"\n"
+msgstr ""
+
+#: src/main.c:223
+#, c-format
+msgid "Try `%s --help` for more information.\n"
+msgstr ""
+
+#: src/main.c:228
+#, c-format
+msgid "%s: too many URLs\n"
+msgstr ""
+
+#: src/main.c:244
+#, c-format
+msgid "initialize_data: couldn't open %s\n"
+msgstr ""
+
+#: src/main.c:248
+#, c-format
+msgid "scan started: %s"
+msgstr ""
+
+#. printf("sats: %f\n", acs);
+#: src/main.c:257
+#, c-format
+msgid "scan ended: %s"
+msgstr ""
+
+#: src/main.c:283
+msgid "main: session_function greater than 1\n"
+msgstr ""
+
+#: src/main.c:295
+msgid "main: session_usernumber greater than num_lines\n"
+msgstr ""
+
+#: src/main.c:306
+msgid "main: session_count greater than num_lines\n"
+msgstr ""
+
+#: src/main.c:314 src/main.c:318
+#, c-format
+msgid "match [%s:%s]\n"
+msgstr ""
+
+#: src/main.c:326 src/main.c:327
+#, c-format
+msgid "max users reached at %i\n"
+msgstr ""
+
+#: src/main.c:342 src/main.c:343
+#, c-format
+msgid "Congratulations: %i password%s found.\n"
+msgstr ""
+
+#: src/main.c:346 src/main.c:347
+msgid "No passwords found.\n"
+msgstr ""

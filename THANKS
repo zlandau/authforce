@@ -1,0 +1,11 @@
+Thanks to the following (in no particular order):
+
+Toby Deshane, for helping me with the tough areas of programming
+Daniel Stenberg, for writing curl (http://curl.haxx.se/)
+The authors of BASH, for some code (see extract.c)
+Bob Stout, for strrev (misc.c) obtained from http://www.brokersys.com/snippets/
+S.E. Margison and Robert B.Stout for most of remove_crud
+Johan Lindh, for memwatch (http://www.link-data.com/memwatch-2.64.tar.gz)
+Panagiotis Issaris, for the configure script, internationalisation support, 
+translations, bugfixes, testing, and rpm building
+Michael K. Hubbard, for rpm building

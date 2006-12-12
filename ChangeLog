@@ -1,0 +1,160 @@
+2001-05-06 17:01  kapheine
+
+	* configure.in: Moved . to beginning of searchpath
+
+2001-04-28 16:32  kapheine
+
+	* Makefile.in, NEWS, TODO, authforcerc.sample, configure,
+	configure.in, data/Makefile.in, doc/Makefile.in,
+	doc/authforce.1.gz, doc/authforce.info, doc/authforce.texi,
+	po/authforce.pot, po/nl.gmo, po/nl.po, src/Makefile.am,
+	src/Makefile.in, src/config.c, src/debug.c, src/extern.h,
+	src/files.c, src/http.c, src/main.c, src/signal.c: Added multiple
+	levels of debugging through debug()
+
+2001-04-28 15:34  kapheine
+
+	* TODO: Removed mentioning of a need for a configure script
+
+2001-04-27 16:55  kapheine
+
+	* Makefile.in, configure, data/Makefile.in, doc/Makefile.in,
+	po/authforce.pot, src/files.c, src/main.c: Hopefully fixed the
+	much-reported bug where authforce would croak on large password
+	files
+
+2001-02-16 17:02  kapheine
+
+	* THANKS: Added Michael K. Hubbard
+
+2001-02-14 22:53  kapheine
+
+	* authforce.spec.in: Arch should be i586, not i585. Fixed.
+
+2001-02-13 17:54  kapheine
+
+	* src/: config.c, extract.c, misc.c, signal.c: Fixed Id strings
+
+2001-02-12 21:31  kapheine
+
+	* ChangeLog: Released 0.9.5
+
+2001-02-12 21:20  kapheine
+
+	* NEWS, README, THANKS, configure.in: Various changes for upcoming
+	release
+
+2001-02-12 21:19  kapheine
+
+	* TODO: Added request for memwatch support in configure
+
+2001-02-12 21:01  kapheine
+
+	* src/main.c: Replaced hardcoded version number and project name
+	with VERSION and PROJECT
+
+2001-02-09 19:27  kapheine
+
+	* src/config.c: Re-added to CVS
+
+2001-02-09 19:22  kapheine
+
+	* src/: extern.h, files.c, http.c, main.c, methods.c, misc.c,
+	signal.c: Added  tags to source
+
+2001-02-09 19:05  kapheine
+
+	* src/main.c: Fixed datafile_path to reflect change to 'data'
+
+2001-02-09 18:56  kapheine
+
+	* data/Makefile.am: Changed directory for data files
+
+2001-02-09 18:49  kapheine
+
+	* authforcerc.sample: Changed paths back to 'data'
+
+2001-02-09 18:44  kapheine
+
+	* Makefile, Makefile.am, Makefile.in, authforce.spec, config.cache,
+	config.h, config.log, config.status, configure, stamp-h,
+	data/Makefile, data/Makefile.in, doc/Makefile, doc/Makefile.in,
+	intl/Makefile, po/Makefile, po/authforce.pot, po/nl.gmo, po/nl.po,
+	src/Makefile, src/Makefile.am, src/Makefile.in, src/extern.h,
+	src/main.c: Fixed NLS support.
+
+2001-02-09 18:30  kapheine
+
+	* INSTALL: Added --with-path information
+
+2001-02-09 18:25  kapheine
+
+	* Makefile.am: Changed SUBDIRS order so --disable-nls would work
+
+2001-02-09 18:20  kapheine
+
+	* README: Removed 'bleb' section
+
+2001-02-09 18:17  kapheine
+
+	* configure.in: Added --with-path support. Path now read from
+	config.h instead of being given on the commandline
+
+2001-02-09 18:16  kapheine
+
+	* autogen.sh: Added autogen.sh
+
+2001-02-09 15:04  kapheine
+
+	* config.h.in, ABOUT-NLS, AUTHORS, BUGS, COPYING, ChangeLog,
+	INSTALL, Makefile, Makefile.am, Makefile.in, NEWS, README, THANKS,
+	TODO, acconfig.h, aclocal.m4, authforce.spec, authforce.spec.in,
+	authforcerc.sample, config.cache, config.h, config.log,
+	config.status, configure, configure.in, install-sh, missing,
+	mkinstalldirs, stamp-h, stamp-h.in, data/Makefile,
+	data/Makefile.am, data/Makefile.in, data/blank.lst, data/dummy.lst,
+	data/password.lst, data/username.lst, data/userpass.lst,
+	doc/Makefile.am, doc/authforce.texi, intl/ChangeLog, intl/Makefile,
+	intl/Makefile.in, intl/VERSION, intl/bindtextdom.c,
+	intl/cat-compat.c, intl/dcgettext.c, intl/dgettext.c,
+	intl/explodename.c, intl/finddomain.c, intl/gettext.c,
+	intl/gettext.h, intl/gettextP.h, intl/hash-string.h,
+	intl/intl-compat.c, intl/l10nflist.c, intl/libgettext.h,
+	intl/linux-msg.sed, intl/loadinfo.h, intl/loadmsgcat.c,
+	intl/localealias.c, intl/po2tbl.sed, intl/po2tbl.sed.in,
+	intl/textdomain.c, intl/xopen-msg.sed, po/ChangeLog, po/Makefile,
+	po/Makefile.in, po/Makefile.in.in, po/POTFILES, po/POTFILES.in,
+	po/authforce.pot, po/cat-id-tbl.c, po/nl.gmo, po/nl.po,
+	po/stamp-cat-id, doc/Makefile, doc/Makefile.in, doc/authforce.1.gz,
+	doc/authforce.info, doc/texinfo.tex, src/Makefile, src/Makefile.am,
+	src/Makefile.in, src/extern.h, src/extract.c, src/files.c,
+	src/http.c, src/main.c, src/methods.c, src/misc.c, src/signal.c:
+	Initial revision
+
+2001-02-09 15:04  kapheine
+
+	* config.h.in, ABOUT-NLS, AUTHORS, BUGS, COPYING, ChangeLog,
+	INSTALL, Makefile, Makefile.am, Makefile.in, NEWS, README, THANKS,
+	TODO, acconfig.h, aclocal.m4, authforce.spec, authforce.spec.in,
+	authforcerc.sample, config.cache, config.h, config.log,
+	config.status, configure, configure.in, install-sh, missing,
+	mkinstalldirs, stamp-h, stamp-h.in, data/Makefile,
+	data/Makefile.am, data/Makefile.in, data/blank.lst, data/dummy.lst,
+	data/password.lst, data/username.lst, data/userpass.lst,
+	doc/Makefile.am, doc/authforce.texi, intl/ChangeLog, intl/Makefile,
+	intl/Makefile.in, intl/VERSION, intl/bindtextdom.c,
+	intl/cat-compat.c, intl/dcgettext.c, intl/dgettext.c,
+	intl/explodename.c, intl/finddomain.c, intl/gettext.c,
+	intl/gettext.h, intl/gettextP.h, intl/hash-string.h,
+	intl/intl-compat.c, intl/l10nflist.c, intl/libgettext.h,
+	intl/linux-msg.sed, intl/loadinfo.h, intl/loadmsgcat.c,
+	intl/localealias.c, intl/po2tbl.sed, intl/po2tbl.sed.in,
+	intl/textdomain.c, intl/xopen-msg.sed, po/ChangeLog, po/Makefile,
+	po/Makefile.in, po/Makefile.in.in, po/POTFILES, po/POTFILES.in,
+	po/authforce.pot, po/cat-id-tbl.c, po/nl.gmo, po/nl.po,
+	po/stamp-cat-id, doc/Makefile, doc/Makefile.in, doc/authforce.1.gz,
+	doc/authforce.info, doc/texinfo.tex, src/Makefile, src/Makefile.am,
+	src/Makefile.in, src/extern.h, src/extract.c, src/files.c,
+	src/http.c, src/main.c, src/methods.c, src/misc.c, src/signal.c:
+	Imported authforce sources to CVS
+

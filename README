@@ -1,0 +1,78 @@
+                      [ authforce v0.9.5 README]
+                         by Zachary P. Landau
+
+[ description ]
+
+	Authforce is an HTTP authentication brute forcer. Using various methods,
+	it attempts brute force username and password pairs for a site. It has 
+	the ability to try common username and passwords, username derivations,
+	and common username/password pairs. It is used to both test the security
+	of your site and to prove the insecurity of HTTP authentication based on
+	the fact that users just don't pick good passwords.
+
+[ installation ]
+
+	See INSTALL.
+
+[ how to use ]
+
+	For basic usage, make sure the data files have the data you want, and then
+	run authforce with the argument being the url of the site you want to brute
+	force. At the moment, it is not possible to disable a method, but you can
+	get the same effect by making it use an empty data file. For example, I
+	don't usually use the concat method, because the datalist I have for it
+	sucks.
+
+	The major special item that may cause a little confusion is the session 
+	support. I think it works :P. Start up authforce with the -s option (for
+	session support) and let it run. When you want to stop it, kill it with
+	USRINT (^C or kill -INT pid) which will cause the program to write its 
+	current position to session.save (by default) and quit. Then when you want
+	to resume the session, type authforce -r.
+
+	The data lists are very sparse at the moment. Make your own or find one.
+	Programs like John the Ripper have good lists, although you usually don't
+	want yours that long. If you make a good list of your own, please 
+	contribute it.
+
+	The password.lst file has a new syntax now. Along with regular passwords
+	are the keywords {username} and {emanresu} which insert the username and
+	the username reversed, respectively. Things like {username}123 and
+	{username}{emanresu} are valid (and encouraged!). If you have any ideas
+	for other keywords, please let me know.
+
+[ notes ]
+
+	First, a note on contributing. Please do it :P It would be immensely 
+	helpful to get any type of contribution. If you find a bug, don't assume
+	it has already been reported, report it to me (with information about your
+	system etc, please) If there are misspellings or tiny mistakes, notify me
+	or submit a patch. If you would like to add something, do it (you may want
+	to email me about it before hand, just in case I want to discuss it with
+	you). Better documentation would be fine. Nice data files with common 
+	passwords would help. (see TODO && BUGS)
+
+	Secondly, I wrote this because I couldn't find a program that did it. I
+	know I saw one a while ago, but I couldn't find it. If someone knows of
+	a program like this, please tell me. If I think it's better, perhaps I'll
+	abandon this and maybe help with that. 
+
+	If you compile with the development CFLAGS, and you wish to leave in 
+	-DMEMWATCH, you'll need to get memwatch from:
+	http://www.link-data.com/memwatch-2.64.tar.gz
+	Put memwatch.c and memwatch.h in the authforce directory and compile. It
+	is really a great program and I recommend you use it for your own projects.
+
+	Please contact me. Even if it is just to say that you are using the 
+	program. Feedback helps me understand how well I'm doing :P Feel free to
+	send it gpg encrypted too. You know, so 'they' can't intercept it.
+	
+	P.S. Memory leaks are spawned by the devil. Elimate them for me and I
+	will be very happy. To find the ones I know about, grep for MEMWATCH.
+	End Transmission.
+
+[ contact ]
+
+	URL: http://kapheine.hypa.net/authforce
+	Email: kapheine@hypa.net
+	GPG Key: http://kapheine.hypa.net/kapheine.asc
