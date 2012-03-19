@@ -1,6 +1,14 @@
                       [ authforce v0.9.5 README]
                          by Zachary P. Landau
 
+[ prelude ]
+
+	This was written to help me learn C way back when. Looking back on it,
+	parts of it could probably be used in a "How not to program" manual.
+	For better or for worse it became my most popular program, despite my
+	lack of attention to maintaining it. I include it here mostly for its
+	historical value.
+
 [ description ]
 
 	Authforce is an HTTP authentication brute forcer. Using various methods,
@@ -70,9 +78,3 @@
 	P.S. Memory leaks are spawned by the devil. Elimate them for me and I
 	will be very happy. To find the ones I know about, grep for MEMWATCH.
 	End Transmission.
-
-[ contact ]
-
-	URL: http://kapheine.hypa.net/authforce
-	Email: kapheine@hypa.net
-	GPG Key: http://kapheine.hypa.net/kapheine.asc
